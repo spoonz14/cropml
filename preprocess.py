@@ -5,13 +5,9 @@ IMAGE_SIZE = 512
 anomolies = 6
 
 #collect all images paths under data folder and store the path
-IMG_Path = tf.data.Dataset.list_files("data/*.jpg", shuffle = False)
-print(IMG_Path)
+dataset = tf.data.Dataset.list_files("data/*.jpg", shuffle = False)
 
-for x in IMG_Path:
-    print(x)
 
-    
 def load_image(image_path):
     image = tf.io.read_file(image_path)
     image = tf.image.decode_jpeg(image, channels =3)
