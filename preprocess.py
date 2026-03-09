@@ -1,8 +1,17 @@
 import tensorflow as tf
 import numpy as np
 
+NUM_ANOMALIES = 6
 IMAGE_SIZE = 512
-anomolies = 6
+
+ANOMALY_NAMES = [
+    "cloud_shadow",
+    "double_plant",
+    "planter_skip",
+    "standing_water",
+    "waterway",
+    "weed_cluster",
+]
 
 #collect all images paths under data folder and store the path
 dataset = tf.data.Dataset.list_files("data/*.jpg", shuffle = False)
